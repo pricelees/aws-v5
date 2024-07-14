@@ -34,7 +34,9 @@ jobs:
         env:
           TIME: "${{ steps.current-time.outputs.formattedTime }}"
           R_TIME: "${{ steps.current-time.outputs.readableTime }}"
-        run: echo "CurrentTime=${{TIME}}"
+        run:
+            echo "Current Time: ${TIME}"
+            echo "Readable Time: ${R_TIME}"
 
      # EB에 CD 하기 위해 추가 작성
       - name: Generate deployment package
